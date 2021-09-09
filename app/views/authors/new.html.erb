@@ -1,0 +1,55 @@
+<view class="container">
+  <h1 class="header"> Create a new Author </h1>
+
+  <%= form_for @author_item, url:krijo_autor_nested_path do |f| %>
+
+    <div class="field">
+      <div><%= f.label :name %></div>
+      <div><%= f.text_field :name, class: "input" %></div>
+    </div>
+
+    <div class="field">
+      <div><%= f.label :surname %></div>
+      <div><%= f.text_field :surname, class: "input" %></div>
+    </div>
+
+    <%= f.fields_for :books do |book| %>
+      <div class="field">
+        <div><%= book.label :title %></div>
+        <div><%= book.text_field :title, class: "input" %></div>
+      </div>
+
+      <div class="field">
+        <div><%= book.label :publisher %></div>
+        <div><%= book.text_field :publisher, class: "input" %></div>
+      </div>
+
+      <div class="field">
+        <div><%= book.label :number_of_pages %></div>
+        <div><%= book.text_field :number_of_pages, class: "input" %></div>
+      </div>
+
+      <div class="field">
+        <div><%= book.label :date_of_publication %></div>
+        <div><%= book.text_field :date_of_publication, class: "input" %></div>
+      </div>
+    <% end %>
+
+
+    <%= f.fields_for :private_token do |token| %>
+      <div class="field">
+        <div><%= token.label :token %></div>
+        <div><%= token.text_field :token, class: "input" %></div>
+      </div>
+    <% end %>
+
+
+    <div class="actions">
+      <%= f.submit class: 'form_button' %>
+    </div>
+
+
+<% end %>
+
+
+</view>

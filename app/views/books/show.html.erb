@@ -1,0 +1,10 @@
+<div class="container">
+<h1 class="header"> Book details <h1>
+
+  <h1> <%= @book_item.title %> </h1>
+  <em> <%= @book_item.publisher %> </em>
+  <p> <%= @book_item.number_of_pages %> </p>
+  <p> <%= @book_item.date_of_publication %> </p>
+  <p> <%= @book_item.author.name %> <%= @book_item.author.surname %> </p>
+  <%= button_to "Delete", book_path(@book_item.id), method: :delete, data: {confirm:'Are you sure?'}, class:"buttonTo"  %>
+</div>

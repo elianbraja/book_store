@@ -1,0 +1,5 @@
+<div class = "all_authors">
+  <% @authors.each do |author| %>
+    <p class="author_item"><%= link_to author.name, each_book_url(author.id), :method => :get %> </p>
+  <% end %>
+</div>

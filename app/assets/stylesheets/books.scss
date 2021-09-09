@@ -1,0 +1,71 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.buttons{
+  display: inline-flex;
+}
+
+.all_authors{
+  display: inline-flex;
+}
+
+.author_item{
+  margin-right: 20px;
+}
+
+.buttonTo{
+  background-color: #0388fc;
+  width: 150px;
+  height: 40px;
+  border: none;
+  margin-right: 20px;
+  color: #fff;
+}
+
+em{
+  font-weight: bold;
+}
+
+#new_book_button{
+  background-color: red;
+  width: 150px;
+  height: 40px;
+  border: none;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.field{
+  margin-top: 10px;
+}
+
+.actions{
+  margin-top: 10px;
+}
+
+#cntr{
+  background-color: red;
+  align-items: center;
+  justify-content: center;
+}
+
+.input{
+  background-color: #e6f0dd;
+  border: none;
+  border-radius: 20px;
+  height:25px;
+  padding-left: 10px;
+}
+
+.container{
+  text-align: center;
+}
+
+.form_button{
+  background-color: #0388fc;
+  width: 150px;
+  height: 40px;
+  border: none;
+  color: #fff;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+<h1 class="header"> Book items </h1>
+
+
+  <p> Authors </p>
+  <div class = "all_authors">
+    <% @authors.each do |author| %>
+      <p class="author_item"><%= link_to author.name, each_book_url(author.id), :method => :get %> </p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= button_to "Add New Book", new_book_url,:method => :get, id:"new_book_button" %>
+    <%= button_to "Add New Author", krijo_autor_path,:method => :get, id:"new_book_button" %>
+    <% @book_items.each do |book_item| %>
+      <p><em>Title: </em><%= book_item.title %> </p>
+      <p><em>Publisher: </em><%= book_item.publisher %> </p>
+      <p><em>Number of pages: </em><%= book_item.number_of_pages %> </p>
+      <p><em>Date of publication: </em><%= book_item.date_of_publication %> </p>
+      <p><em>Author: </em><%= book_item.author.name %> <%= book_item.author.surname %> </p>
+      <div class="buttons">
+        <%= button_to "Modify", edit_book_url(book_item.id), :method => :get, class:"buttonTo" %>
+        <%= button_to "Delete", book_path(book_item.id), method: :delete, data: {confirm:'Are you sure?'}, class:"buttonTo"  %>
+        <%= button_to "Details", book_url(book_item.id), :method => :get, class:"buttonTo" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

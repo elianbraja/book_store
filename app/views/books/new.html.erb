@@ -1,0 +1,36 @@
+<view class="container">
+  <h1 class="header"> Create a new Book </h1>
+
+  <%= form_for(@book_item) do |f| %>
+
+    <div class="field">
+      <div><%= f.label :title %></div>
+      <div><%= f.text_field :title, class:"input" %></div>
+    </div>
+
+    <div class="field">
+       <div><%= f.label :publisher %></div>
+       <div><%= f.text_field :publisher, class:"input" %></div>
+     </div>
+
+     <div class="field">
+        <div><%= f.label :number_of_pages %></div>
+        <div><%= f.text_field :number_of_pages, class:"input" %></div>
+      </div>
+
+      <div class="field">
+         <div><%= f.label :date_of_publication %></div>
+         <div><%= f.text_field :date_of_publication, class:"input" %></div>
+       </div>
+
+       <p><em>Authors: </em>
+         <%= f.select :author_id, options_for_select(
+         @authors.map{ |c| [c.name + " " + c.surname, c.id] }) %>
+       </p>
+
+      <div class="actions">
+         <%= f.submit class: 'form_button' %>
+      </div>
+
+  <% end %>
+</view>
